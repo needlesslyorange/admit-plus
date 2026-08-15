@@ -35,7 +35,7 @@
 
 ### Option 1: Install from GitHub Releases (Quickest)
 
-1. Download the latest `.zip` for your browser from the **[Releases](https://github.com/VijvalN/admit-plus/releases)** page:
+1. Download the latest `.zip` for your browser from the **[Releases](https://github.com/needlesslyorange/admit-plus/releases)** page:
    - For **Chrome / Brave / Edge / Opera**: Download `admit-plus-chrome.zip`
    - For **Firefox**: Download `admit-plus-firefox.zip`
 2. Extract the downloaded `.zip` file into a folder on your computer.
@@ -57,7 +57,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/VijvalN/admit-plus.git
+git clone https://github.com/needlesslyorange/admit-plus.git
 cd admit-plus
 
 # Build the packages (optional, requires Node.js)
