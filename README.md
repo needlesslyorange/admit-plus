@@ -2,6 +2,10 @@
 
 Dark Mode and 1-click school forum navigation for [Admit.org](https://med.admit.org).
 
+![Admit+ Cycle Results Dark Mode](screenshots/cycle-results.jpg)
+
+![Admit+ Medical School Rankings](screenshots/school-rankings.jpg)
+
 ## Features
 
 - **5 Dark Themes**: Midnight, OLED, Slate, Mocha, and Indigo
