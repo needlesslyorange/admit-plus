@@ -1,0 +1,11 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Node.js / Editor
+node_modules/
+.vscode/
+.idea/
+
+# Local Build Artifacts
+firefox_build/

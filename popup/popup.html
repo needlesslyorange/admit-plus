@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admit+</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <span class="brand-icon">🌙</span>
+        <span class="brand-title">Admit<span class="brand-accent">+</span></span>
+      </div>
+      <span class="brand-tag">v1.2</span>
+    </header>
+
+    <!-- Main Switches & Palette -->
+    <div class="control-card">
+      <div class="control-item">
+        <div class="control-label">
+          <span class="title">Dark Mode</span>
+          <span class="subtitle">Shortcut: <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd></span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="dark-mode-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Color Theme Presets -->
+      <div class="theme-section">
+        <span class="theme-label">Theme Palette</span>
+        <div class="theme-pills">
+          <button type="button" class="theme-pill active" data-theme="midnight" title="Midnight Navy">
+            <span class="swatch midnight-swatch"></span>
+            <span>Midnight</span>
+          </button>
+          <button type="button" class="theme-pill" data-theme="oled" title="OLED Pitch Black">
+            <span class="swatch oled-swatch"></span>
+            <span>OLED</span>
+          </button>
+          <button type="button" class="theme-pill" data-theme="slate" title="Zinc Slate">
+            <span class="swatch slate-swatch"></span>
+            <span>Slate</span>
+          </button>
+          <button type="button" class="theme-pill" data-theme="mocha" title="Warm Mocha">
+            <span class="swatch mocha-swatch"></span>
+            <span>Mocha</span>
+          </button>
+          <button type="button" class="theme-pill" data-theme="indigo" title="Deep Indigo">
+            <span class="swatch indigo-swatch"></span>
+            <span>Indigo</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="control-item">
+        <div class="control-label">
+          <span class="title">High Contrast</span>
+          <span class="subtitle">Sharper borders & definition</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="contrast-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="control-item">
+        <div class="control-label">
+          <span class="title">School Quick Jump</span>
+          <span class="subtitle">Jump between Results & Forums</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="forum-jump-toggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

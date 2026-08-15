@@ -1,0 +1,226 @@
+/* ==========================================================================
+   ADMIT+ POPUP STYLES (Clean & Minimalist)
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 310px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #0f1524;
+  color: #f1f5f9;
+  user-select: none;
+  font-size: 13px;
+}
+
+.popup-container {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-icon {
+  font-size: 16px;
+}
+
+.brand-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.brand-accent {
+  color: #ffea5c;
+}
+
+.brand-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  background: #192237;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  border: 1px solid #222f4b;
+}
+
+/* Control Card */
+.control-card {
+  background: #121929;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.control-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  gap: 12px;
+}
+
+.control-label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.control-label .title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+.control-label .subtitle {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.2;
+}
+
+kbd {
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  background: #1e293b;
+  color: #cbd5e1;
+  padding: 1px 4px;
+  border-radius: 4px;
+  border: 1px solid #334155;
+}
+
+.divider {
+  height: 1px;
+  background: #1e293b;
+}
+
+/* Theme Palette Section */
+.theme-section {
+  padding: 10px 14px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #0d1322;
+}
+
+.theme-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.theme-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.theme-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #94a3b8;
+  background: #162035;
+  border: 1px solid #222f4b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.theme-pill:hover {
+  color: #ffffff;
+  border-color: #3b82f6;
+  background: #1c2942;
+}
+
+.theme-pill.active {
+  color: #ffffff;
+  background: #1e293b;
+  border-color: #ffea5c;
+  box-shadow: 0 0 0 1px rgba(255, 234, 92, 0.4);
+}
+
+.swatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.midnight-swatch { background: #1e3a8a; }
+.oled-swatch     { background: #000000; border: 1px solid #475569; }
+.slate-swatch    { background: #475569; }
+.mocha-swatch    { background: #78350f; }
+.indigo-swatch   { background: #4338ca; }
+
+/* Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #334155;
+  transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 22px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #ffffff;
+  transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+input:checked + .slider {
+  background-color: #3b82f6;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}

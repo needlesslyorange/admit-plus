@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "Admit+ | Dark Mode & Forum Jump",
+  "version": "1.2.0",
+  "description": "Clean Dark Mode and instant School Forum jump for Admit.org.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "admit-plus@admit.org",
+      "strict_min_version": "109.0"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    },
+    "default_title": "Admit+"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "*://admit.org/*",
+    "*://*.admit.org/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://admit.org/*",
+        "*://*.admit.org/*"
+      ],
+      "css": [
+        "content/dark-mode.css",
+        "content/content.css"
+      ],
+      "js": [
+        "content/content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "commands": {
+    "toggle-dark-mode": {
+      "suggested_key": {
+        "default": "Alt+Shift+D",
+        "mac": "Alt+Shift+D"
+      },
+      "description": "Toggle Admit.org Dark Mode"
+    }
+  }
+}

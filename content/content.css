@@ -1,0 +1,99 @@
+/* ==========================================================================
+   ADMIT+ Quick Jump Buttons (School Results & School Forums)
+   ========================================================================== */
+
+/* 1. School Forum Jump Button (In Cycle Results) */
+.admitplus-school-forum-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  height: 2rem !important;
+  padding: 0 12px !important;
+  margin-left: 10px !important;
+  border-radius: 8px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background: rgba(251, 223, 32, 0.12) !important;
+  color: #fbdf20 !important;
+  border: 1px solid rgba(251, 223, 32, 0.35) !important;
+  vertical-align: middle !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+.admitplus-school-forum-btn:hover {
+  background: #fbdf20 !important;
+  color: #000000 !important;
+  border-color: #fbdf20 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 3px 8px rgba(251, 223, 32, 0.25) !important;
+}
+
+.admitplus-school-forum-btn svg {
+  flex-shrink: 0 !important;
+}
+
+/* Light mode state */
+html:not(.admitplus-dark) .admitplus-school-forum-btn {
+  background: #fff8c4 !important;
+  color: #796603 !important;
+  border: 1px solid #ecc90f !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.admitplus-dark) .admitplus-school-forum-btn:hover {
+  background: #fbdf20 !important;
+  color: #000000 !important;
+}
+
+/* 2. Cycle Results Jump Button (In School Forum Header) */
+.admitplus-cycle-results-jump-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  height: 2rem !important;
+  padding: 0 12px !important;
+  margin-left: 10px !important;
+  border-radius: 8px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background: rgba(59, 130, 246, 0.12) !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(59, 130, 246, 0.35) !important;
+  vertical-align: middle !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+.admitplus-cycle-results-jump-btn:hover {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 3px 8px rgba(59, 130, 246, 0.3) !important;
+}
+
+.admitplus-cycle-results-jump-btn svg {
+  flex-shrink: 0 !important;
+}
+
+/* Light mode state */
+html:not(.admitplus-dark) .admitplus-cycle-results-jump-btn {
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border: 1px solid #bfdbfe !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.admitplus-dark) .admitplus-cycle-results-jump-btn:hover {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}

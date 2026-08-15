@@ -1,0 +1,475 @@
+/* ==========================================================================
+   ADMIT+ DARK MODE ENGINE
+   Pure Color & CSS Custom Property Theming (Zero Layout Distortions)
+   ========================================================================== */
+
+/* Zero-Flash Frame 0 Document Canvas Background */
+html.admitplus-dark {
+  display: block !important;
+  background-color: #090d16 !important;
+  color-scheme: dark !important;
+}
+
+html.admitplus-dark body {
+  background-color: #090d16 !important;
+  color-scheme: dark !important;
+}
+
+/* 1. Midnight Theme (Default) */
+html.admitplus-dark,
+html[data-admitplus-theme="midnight"].admitplus-dark {
+  color-scheme: dark !important;
+
+  --background-color: #090d16 !important;
+  --main-background-color: #0d1322 !important;
+  --main-header-background-color: rgba(13, 19, 34, 0.88) !important;
+  --line-color: #1e293b !important;
+  --hover-color: rgba(255, 255, 255, 0.08) !important;
+  --hovered-bg: #192237 !important;
+  --overlay-color: rgba(0, 0, 0, 0.75) !important;
+  --skeleton-color: rgba(255, 255, 255, 0.08) !important;
+  --shadow: 0px 4px 16px rgba(0, 0, 0, 0.4) !important;
+
+  /* Surfaces */
+  --color-0: #121929 !important;
+  --color-50: #0f1524 !important;
+  --color-75: #0a0e17 !important;
+  --color-100: #192237 !important;
+  --color-150: #222f4b !important;
+  --color-200: #2d3e63 !important;
+  --color-250: #475569 !important;
+  --color-300: #64748b !important;
+  --color-350: #94a3b8 !important;
+  --color-400: #cbd5e1 !important;
+  --color-450: #e2e8f0 !important;
+  --color-500: #f1f5f9 !important;
+  --color-550: #f8fafc !important;
+  --color-600: #f8fafc !important;
+  --color-650: #ffffff !important;
+  --color-700: #ffffff !important;
+  --color-740: #ffffff !important;
+  --color-750: #ffffff !important;
+  --color-800: #ffffff !important;
+  --color-850: #ffffff !important;
+  --color-900: #ffffff !important;
+  --color-950: #ffffff !important;
+  --color-1000: #ffffff !important;
+
+  /* Tinted Tokens */
+  --blue-50: #0c182b !important;
+  --blue-100: #132442 !important;
+  --blue-200: #1e3a6e !important;
+  --orange-50: #1f1407 !important;
+  --orange-100: #2e1d08 !important;
+  --yellow-50: #1c1906 !important;
+  --yellow-100: #2b2608 !important;
+  --green-50: #091c13 !important;
+  --green-100: #0f2e1f !important;
+  --red-50: #240b0b !important;
+  --red-100: #381212 !important;
+
+  /* Typography */
+  --font-color-1: #ffffff !important;
+  --font-color-2: #94a3b8 !important;
+  --font-color-3: #cbd5e1 !important;
+  --font-color-4: #e2e8f0 !important;
+  --font-color-5: #f1f5f9 !important;
+  --font-color-6: #f1f5f9 !important;
+  --font-color-7: #f8fafc !important;
+  --font-color-8: #f8fafc !important;
+  --font-color-9: #ffffff !important;
+  --font-color-10: #ffffff !important;
+  --font-color-11: #ffffff !important;
+  --font-color-12: #ffffff !important;
+  --font-color-13: #ffffff !important;
+  --font-color-14: #ffffff !important;
+}
+
+/* 2. OLED Pitch Black Theme */
+html[data-admitplus-theme="oled"].admitplus-dark {
+  color-scheme: dark !important;
+
+  --background-color: #000000 !important;
+  --main-background-color: #050505 !important;
+  --main-header-background-color: rgba(0, 0, 0, 0.92) !important;
+  --line-color: #222225 !important;
+  --hover-color: rgba(255, 255, 255, 0.1) !important;
+  --hovered-bg: #141414 !important;
+  --overlay-color: rgba(0, 0, 0, 0.9) !important;
+  --skeleton-color: rgba(255, 255, 255, 0.08) !important;
+  --shadow: 0px 4px 20px rgba(0, 0, 0, 0.8) !important;
+
+  --color-0: #0a0a0a !important;
+  --color-50: #050505 !important;
+  --color-75: #000000 !important;
+  --color-100: #141414 !important;
+  --color-150: #222225 !important;
+  --color-200: #2e2e33 !important;
+  --color-250: #3f3f46 !important;
+  --color-300: #71717a !important;
+  --color-350: #a1a1aa !important;
+  --color-400: #d4d4d8 !important;
+  --color-450: #e4e4e7 !important;
+  --color-500: #f4f4f5 !important;
+  --color-550: #ffffff !important;
+  --color-600: #ffffff !important;
+  --color-650: #ffffff !important;
+  --color-700: #ffffff !important;
+  --color-740: #ffffff !important;
+  --color-750: #ffffff !important;
+  --color-800: #ffffff !important;
+  --color-850: #ffffff !important;
+  --color-900: #ffffff !important;
+  --color-950: #ffffff !important;
+  --color-1000: #ffffff !important;
+
+  --blue-50: #060e17 !important;
+  --blue-100: #0c1824 !important;
+  --blue-200: #122438 !important;
+  --orange-50: #140d05 !important;
+  --orange-100: #211508 !important;
+  --yellow-50: #141205 !important;
+  --yellow-100: #1f1b07 !important;
+  --green-50: #05140d !important;
+  --green-100: #0a2115 !important;
+  --red-50: #1a0808 !important;
+  --red-100: #260c0c !important;
+
+  --font-color-1: #ffffff !important;
+  --font-color-2: #a1a1aa !important;
+  --font-color-3: #d4d4d8 !important;
+  --font-color-4: #e4e4e7 !important;
+  --font-color-5: #f4f4f5 !important;
+  --font-color-6: #f4f4f5 !important;
+  --font-color-7: #ffffff !important;
+  --font-color-8: #ffffff !important;
+  --font-color-9: #ffffff !important;
+  --font-color-10: #ffffff !important;
+  --font-color-11: #ffffff !important;
+  --font-color-12: #ffffff !important;
+  --font-color-13: #ffffff !important;
+  --font-color-14: #ffffff !important;
+}
+
+/* 3. Slate Titanium Theme */
+html[data-admitplus-theme="slate"].admitplus-dark {
+  color-scheme: dark !important;
+
+  --background-color: #0f172a !important;
+  --main-background-color: #141f36 !important;
+  --main-header-background-color: rgba(15, 23, 42, 0.88) !important;
+  --line-color: #334155 !important;
+  --hover-color: rgba(255, 255, 255, 0.08) !important;
+  --hovered-bg: #293548 !important;
+  --overlay-color: rgba(0, 0, 0, 0.75) !important;
+  --skeleton-color: rgba(255, 255, 255, 0.08) !important;
+  --shadow: 0px 4px 16px rgba(0, 0, 0, 0.4) !important;
+
+  --color-0: #1e293b !important;
+  --color-50: #141f36 !important;
+  --color-75: #0f172a !important;
+  --color-100: #293548 !important;
+  --color-150: #334155 !important;
+  --color-200: #475569 !important;
+  --color-250: #64748b !important;
+  --color-300: #94a3b8 !important;
+  --color-350: #cbd5e1 !important;
+  --color-400: #e2e8f0 !important;
+  --color-450: #f1f5f9 !important;
+  --color-500: #f8fafc !important;
+  --color-550: #ffffff !important;
+  --color-600: #ffffff !important;
+  --color-650: #ffffff !important;
+  --color-700: #ffffff !important;
+  --color-740: #ffffff !important;
+  --color-750: #ffffff !important;
+  --color-800: #ffffff !important;
+  --color-850: #ffffff !important;
+  --color-900: #ffffff !important;
+  --color-950: #ffffff !important;
+  --color-1000: #ffffff !important;
+
+  --blue-50: #132442 !important;
+  --blue-100: #1c3258 !important;
+  --orange-50: #281a0b !important;
+  --orange-100: #3b2711 !important;
+  --yellow-50: #292408 !important;
+  --yellow-100: #3d360c !important;
+  --green-50: #0f2c1e !important;
+  --green-100: #17422d !important;
+  --red-50: #301010 !important;
+  --red-100: #451717 !important;
+
+  --font-color-1: #ffffff !important;
+  --font-color-2: #94a3b8 !important;
+  --font-color-3: #cbd5e1 !important;
+  --font-color-4: #e2e8f0 !important;
+  --font-color-5: #f1f5f9 !important;
+  --font-color-6: #f1f5f9 !important;
+  --font-color-7: #f8fafc !important;
+  --font-color-8: #f8fafc !important;
+  --font-color-9: #ffffff !important;
+  --font-color-10: #ffffff !important;
+  --font-color-11: #ffffff !important;
+  --font-color-12: #ffffff !important;
+  --font-color-13: #ffffff !important;
+  --font-color-14: #ffffff !important;
+}
+
+/* 4. Warm Mocha Theme */
+html[data-admitplus-theme="mocha"].admitplus-dark {
+  color-scheme: dark !important;
+
+  --background-color: #110e0c !important;
+  --main-background-color: #171310 !important;
+  --main-header-background-color: rgba(17, 14, 12, 0.88) !important;
+  --line-color: #382e27 !important;
+  --hover-color: rgba(255, 255, 255, 0.08) !important;
+  --hovered-bg: #26211c !important;
+  --overlay-color: rgba(0, 0, 0, 0.75) !important;
+  --skeleton-color: rgba(255, 255, 255, 0.08) !important;
+  --shadow: 0px 4px 16px rgba(0, 0, 0, 0.4) !important;
+
+  --color-0: #1c1815 !important;
+  --color-50: #171310 !important;
+  --color-75: #110e0c !important;
+  --color-100: #26211c !important;
+  --color-150: #382e27 !important;
+  --color-200: #4c3f35 !important;
+  --color-250: #69574a !important;
+  --color-300: #9c8e82 !important;
+  --color-350: #bdae9e !important;
+  --color-400: #d4c5b9 !important;
+  --color-450: #eae1d9 !important;
+  --color-500: #f5eee8 !important;
+  --color-550: #fcf8f5 !important;
+  --color-600: #fcf8f5 !important;
+  --color-650: #ffffff !important;
+  --color-700: #ffffff !important;
+  --color-740: #ffffff !important;
+  --color-750: #ffffff !important;
+  --color-800: #ffffff !important;
+  --color-850: #ffffff !important;
+  --color-900: #ffffff !important;
+  --color-950: #ffffff !important;
+  --color-1000: #ffffff !important;
+
+  --blue-50: #121a24 !important;
+  --blue-100: #1b2636 !important;
+  --orange-50: #2b170a !important;
+  --orange-100: #3d220e !important;
+  --yellow-50: #292008 !important;
+  --yellow-100: #3d300c !important;
+  --green-50: #102418 !important;
+  --green-100: #193825 !important;
+  --red-50: #2b0e0e !important;
+  --red-100: #401515 !important;
+
+  --font-color-1: #ffffff !important;
+  --font-color-2: #bdae9e !important;
+  --font-color-3: #d4c5b9 !important;
+  --font-color-4: #eae1d9 !important;
+  --font-color-5: #f5eee8 !important;
+  --font-color-6: #f5eee8 !important;
+  --font-color-7: #fcf8f5 !important;
+  --font-color-8: #fcf8f5 !important;
+  --font-color-9: #ffffff !important;
+  --font-color-10: #ffffff !important;
+  --font-color-11: #ffffff !important;
+  --font-color-12: #ffffff !important;
+  --font-color-13: #ffffff !important;
+  --font-color-14: #ffffff !important;
+}
+
+/* 5. Cyber Indigo Theme */
+html[data-admitplus-theme="indigo"].admitplus-dark {
+  color-scheme: dark !important;
+
+  --background-color: #090714 !important;
+  --main-background-color: #0f0c22 !important;
+  --main-header-background-color: rgba(9, 7, 20, 0.88) !important;
+  --line-color: #29215c !important;
+  --hover-color: rgba(255, 255, 255, 0.08) !important;
+  --hovered-bg: #1e1945 !important;
+  --overlay-color: rgba(0, 0, 0, 0.75) !important;
+  --skeleton-color: rgba(255, 255, 255, 0.08) !important;
+  --shadow: 0px 4px 16px rgba(0, 0, 0, 0.4) !important;
+
+  --color-0: #151130 !important;
+  --color-50: #0f0c22 !important;
+  --color-75: #090714 !important;
+  --color-100: #1e1945 !important;
+  --color-150: #29215c !important;
+  --color-200: #3d3187 !important;
+  --color-250: #5444b8 !important;
+  --color-300: #818cf8 !important;
+  --color-350: #a5b4fc !important;
+  --color-400: #c7d2fe !important;
+  --color-450: #e0e7ff !important;
+  --color-500: #eef2ff !important;
+  --color-550: #f5f3ff !important;
+  --color-600: #f5f3ff !important;
+  --color-650: #ffffff !important;
+  --color-700: #ffffff !important;
+  --color-740: #ffffff !important;
+  --color-750: #ffffff !important;
+  --color-800: #ffffff !important;
+  --color-850: #ffffff !important;
+  --color-900: #ffffff !important;
+  --color-950: #ffffff !important;
+  --color-1000: #ffffff !important;
+
+  --blue-50: #0f162e !important;
+  --blue-100: #172247 !important;
+  --orange-50: #26150b !important;
+  --orange-100: #3b2010 !important;
+  --yellow-50: #262007 !important;
+  --yellow-100: #3d330b !important;
+  --green-50: #0c2118 !important;
+  --green-100: #143627 !important;
+  --red-50: #260c0c !important;
+  --red-100: #3b1414 !important;
+
+  --font-color-1: #ffffff !important;
+  --font-color-2: #a5b4fc !important;
+  --font-color-3: #c7d2fe !important;
+  --font-color-4: #e0e7ff !important;
+  --font-color-5: #eef2ff !important;
+  --font-color-6: #eef2ff !important;
+  --font-color-7: #f5f3ff !important;
+  --font-color-8: #f5f3ff !important;
+  --font-color-9: #ffffff !important;
+  --font-color-10: #ffffff !important;
+  --font-color-11: #ffffff !important;
+  --font-color-12: #ffffff !important;
+  --font-color-13: #ffffff !important;
+  --font-color-14: #ffffff !important;
+}
+
+/* High Contrast Mode */
+html[data-admitplus-contrast="high"].admitplus-dark {
+  --line-color: #475569 !important;
+  --color-150: #475569 !important;
+  --color-200: #64748b !important;
+  --shadow: 0px 4px 20px rgba(0, 0, 0, 0.7) !important;
+}
+
+html[data-admitplus-contrast="high"].admitplus-dark [class*="card"],
+html[data-admitplus-contrast="high"].admitplus-dark [class*="post"],
+html[data-admitplus-contrast="high"].admitplus-dark [class*="optionsCard"] {
+  border-color: #475569 !important;
+}
+
+
+/* ==========================================================================
+   TARGETED COLOR-ONLY FIXES (NO DISPLAY / POSITION / HEIGHT OVERRIDES)
+   ========================================================================== */
+
+/* Base HTML & Body */
+html.admitplus-dark,
+html.admitplus-dark body {
+  background-color: var(--background-color) !important;
+  color: var(--font-color-14) !important;
+}
+
+/* Logo SVG Inversion */
+html.admitplus-dark svg path[fill="#1D1D1B"],
+html.admitplus-dark svg g[fill="#1D1D1B"] {
+  fill: #ffffff !important;
+}
+
+/* Landing Page Hero & Headings */
+html.admitplus-dark div[class*="hero"] h1,
+html.admitplus-dark [class*="heroScreen"] h1,
+html.admitplus-dark [class*="feature"] h2,
+html.admitplus-dark [class*="reviews"] h2,
+html.admitplus-dark [class*="getStarted"] h2 {
+  color: #ffffff !important;
+}
+
+html.admitplus-dark [class*="admitScore"] > div {
+  background-color: var(--color-0) !important;
+  border-color: var(--color-150) !important;
+}
+
+html.admitplus-dark [class*="admitScore"] > div > p {
+  color: var(--font-color-3) !important;
+}
+
+/* Community & Forums Top Banner */
+html.admitplus-dark [class*="topBanner"] {
+  background: var(--blue-100) !important;
+  border-bottom: 1px solid var(--color-150) !important;
+}
+
+html.admitplus-dark [class*="topBanner"][data-amber="true"] {
+  background: var(--orange-100) !important;
+}
+
+/* Welcome Page Color Theming (Pure Color, Zero Layout Changes) */
+html.admitplus-dark [class*="7cp-Va__page"] {
+  background-color: var(--background-color) !important;
+}
+
+html.admitplus-dark [class*="optionsSection"] h1,
+html.admitplus-dark [class*="optionsSection"] h2,
+html.admitplus-dark [class*="optionsCard"] h2 {
+  color: #ffffff !important;
+}
+
+html.admitplus-dark [class*="optionsSection"] h1 span {
+  background-color: #ffffff !important;
+}
+
+html.admitplus-dark [class*="optionsCardsBox"] [class*="optionsCard"] {
+  background-color: var(--color-0) !important;
+  border: 1px solid var(--color-150) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.admitplus-dark [class*="optionsCardsBox"] [class*="optionsCard"]:hover {
+  background-color: var(--color-100) !important;
+  border-color: var(--color-200) !important;
+}
+
+/* School Forums Specific Pages */
+html.admitplus-dark [class*="bo5lbq__post"],
+html.admitplus-dark [class*="Uh9uUq__markdown"] {
+  background-color: var(--color-0) !important;
+  border-color: var(--color-150) !important;
+}
+
+html.admitplus-dark [class*="bo5lbq__content"] {
+  background-color: var(--color-50) !important;
+  border-color: var(--color-150) !important;
+}
+
+html.admitplus-dark [class*="bo5lbq__chevron"] {
+  background-color: var(--color-50) !important;
+  border-color: var(--color-150) !important;
+}
+
+html.admitplus-dark [class*="bo5lbq__avatar"] {
+  background-color: var(--color-100) !important;
+  border-color: var(--color-150) !important;
+}
+
+html.admitplus-dark [class*="cu8WSq__page"],
+html.admitplus-dark [class*="cu8WSq__prevOrNext"] {
+  background-color: var(--color-100) !important;
+  color: var(--font-color-1) !important;
+}
+
+html.admitplus-dark [class*="cu8WSq__active"] {
+  background-color: var(--color-50) !important;
+  border-color: var(--color-150) !important;
+}
+
+/* Custom Scrollbars */
+html.admitplus-dark body::-webkit-scrollbar-thumb {
+  background-color: var(--color-200) !important;
+}
+
+
+
+
