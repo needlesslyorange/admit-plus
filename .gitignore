@@ -1,11 +1,12 @@
-# Operating System files
+# OS & Editor
 .DS_Store
 Thumbs.db
-
-# Node.js / Editor
-node_modules/
 .vscode/
 .idea/
 
-# Local Build Artifacts
+# Node
+node_modules/
+
+# Builds & Archives
+*.zip
 firefox_build/

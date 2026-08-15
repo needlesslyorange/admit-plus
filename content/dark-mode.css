@@ -1,9 +1,3 @@
-/* ==========================================================================
-   ADMIT+ DARK MODE ENGINE
-   Pure Color & CSS Custom Property Theming (Zero Layout Distortions)
-   ========================================================================== */
-
-/* Zero-Flash Frame 0 Document Canvas Background */
 html.admitplus-dark {
   display: block !important;
   background-color: #090d16 !important;
@@ -15,7 +9,7 @@ html.admitplus-dark body {
   color-scheme: dark !important;
 }
 
-/* 1. Midnight Theme (Default) */
+/* Midnight */
 html.admitplus-dark,
 html[data-admitplus-theme="midnight"].admitplus-dark {
   color-scheme: dark !important;
@@ -361,11 +355,6 @@ html[data-admitplus-contrast="high"].admitplus-dark [class*="optionsCard"] {
 }
 
 
-/* ==========================================================================
-   TARGETED COLOR-ONLY FIXES (NO DISPLAY / POSITION / HEIGHT OVERRIDES)
-   ========================================================================== */
-
-/* Base HTML & Body */
 html.admitplus-dark,
 html.admitplus-dark body {
   background-color: var(--background-color) !important;

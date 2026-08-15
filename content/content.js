@@ -1,11 +1,4 @@
-/**
- * Admit+ Content Script
- * Clean, lightweight, loop-free Dark Mode, High Contrast, & Bidirectional School Jump Buttons
- * Zero-Flash Transition Engine
- */
-
 (function () {
-  // 0. Anti-Flash Zero-Latency Style & Meta Injection (Paints document dark on Frame 0)
   const localDark = localStorage.getItem('admitplus-dark');
   const localTheme = localStorage.getItem('admitplus-theme') || 'midnight';
   const localContrast = localStorage.getItem('admitplus-contrast');
@@ -35,7 +28,6 @@
       document.documentElement.setAttribute('data-admitplus-contrast', 'high');
     }
 
-    // Update or add theme-color meta tag
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     if (metaTheme) {
       metaTheme.setAttribute('content', '#090d16');
@@ -54,7 +46,6 @@
     forumJumpEnabled: true
   };
 
-  // 1. Load verified user settings from chrome.storage.sync
   chrome.storage.sync.get(settings, (loaded) => {
     if (chrome.runtime.lastError) return;
     settings = { ...settings, ...loaded };
@@ -63,7 +54,6 @@
     checkJumpButtons();
   });
 
-  // 2. Listen for live changes from popup or shortcut
   chrome.storage.onChanged.addListener((changes, area) => {
     if (area === 'sync') {
       if (changes.darkModeEnabled !== undefined) {
@@ -126,7 +116,6 @@
     }
   }
 
-  // Keyboard shortcut: Alt + Shift + D
   window.addEventListener('keydown', (e) => {
     if (e.altKey && e.shiftKey && (e.key === 'D' || e.key === 'd')) {
       e.preventDefault();
@@ -135,7 +124,6 @@
     }
   });
 
-  // Direct message listener
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type === 'ADMITPLUS_SETTINGS_UPDATED') {
       settings = { ...settings, ...message.changes };
@@ -147,14 +135,7 @@
     return true;
   });
 
-  /* ==========================================================================
-     BIDIRECTIONAL QUICK JUMP BUTTONS (CLIENT-SIDE SPA ROUTING)
-     1. /cycle-results/<school-slug> -> /school-forums/<school-slug>/2026/1
-     2. /school-forums/<school-slug>/... -> /cycle-results/<school-slug>
-     ========================================================================== */
-
   function navigateClientSide(targetUrl) {
-    // Dispatch click on a detached standalone anchor to let Next.js client router handle it
     const link = document.createElement('a');
     link.href = targetUrl;
     link.style.display = 'none';
@@ -171,7 +152,6 @@
 
     const path = window.location.pathname;
 
-    // A. School Cycle Results Page -> Inject "School Forum ↗"
     if (path.includes('/cycle-results/')) {
       const match = path.match(/\/cycle-results\/([a-zA-Z0-9_-]+)/);
       if (match && match[1]) {
@@ -180,7 +160,6 @@
       }
     }
 
-    // B. School Forum Page -> Inject "Cycle Results ↗"
     if (path.includes('/school-forums/')) {
       const match = path.match(/\/school-forums\/([a-zA-Z0-9_-]+)/);
       if (match && match[1]) {
@@ -189,7 +168,6 @@
       }
     }
 
-    // Not on a single-school page -> Clean up buttons
     removeAllJumpButtons();
   }
 
@@ -224,7 +202,6 @@
       <span>School Forum ↗</span>
     `;
 
-    // Stop propagation to prevent triggering parent /school-rankings link!
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -257,7 +234,6 @@
       return;
     }
 
-    // Find school title container in forum header
     const mainTitleSpan = document.querySelector(
       '[class*="n-ofEa__title"] span:first-child, [class*="titleContainer"] span:first-child, [class*="SchoolForumPage"] span:first-child, [class*="titleContainer"] h1, main h1'
     );
@@ -282,7 +258,6 @@
       <span>Cycle Results ↗</span>
     `;
 
-    // Stop propagation to prevent triggering parent links
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -318,7 +293,6 @@
     return '2026';
   }
 
-  // Debounced observer for Next.js SPA navigation (runs at most once every 200ms)
   let debounceTimer = null;
   const observer = new MutationObserver(() => {
     if (debounceTimer) return;

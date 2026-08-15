@@ -1,8 +1,3 @@
-/* ==========================================================================
-   ADMIT+ Quick Jump Buttons (School Results & School Forums)
-   ========================================================================== */
-
-/* 1. School Forum Jump Button (In Cycle Results) */
 .admitplus-school-forum-btn {
   display: inline-flex !important;
   align-items: center !important;
@@ -37,7 +32,6 @@
   flex-shrink: 0 !important;
 }
 
-/* Light mode state */
 html:not(.admitplus-dark) .admitplus-school-forum-btn {
   background: #fff8c4 !important;
   color: #796603 !important;
@@ -50,7 +44,6 @@ html:not(.admitplus-dark) .admitplus-school-forum-btn:hover {
   color: #000000 !important;
 }
 
-/* 2. Cycle Results Jump Button (In School Forum Header) */
 .admitplus-cycle-results-jump-btn {
   display: inline-flex !important;
   align-items: center !important;
@@ -85,7 +78,6 @@ html:not(.admitplus-dark) .admitplus-school-forum-btn:hover {
   flex-shrink: 0 !important;
 }
 
-/* Light mode state */
 html:not(.admitplus-dark) .admitplus-cycle-results-jump-btn {
   background: #eff6ff !important;
   color: #1d4ed8 !important;

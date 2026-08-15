@@ -1,7 +1,3 @@
-/**
- * Admit+ Popup Logic
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   const darkModeToggle = document.getElementById('dark-mode-toggle');
   const contrastToggle = document.getElementById('contrast-toggle');
@@ -15,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     forumJumpEnabled: true
   };
 
-  // Load current settings
   chrome.storage.sync.get(defaultSettings, (settings) => {
     darkModeToggle.checked = settings.darkModeEnabled;
     contrastToggle.checked = settings.highContrastEnabled || false;
@@ -23,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setActiveThemePill(settings.currentTheme || 'midnight');
   });
 
-  // Dark mode switch handler
   darkModeToggle.addEventListener('change', (e) => {
     const isEnabled = e.target.checked;
     chrome.storage.sync.set({ darkModeEnabled: isEnabled }, () => {
@@ -31,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // High contrast switch handler
   contrastToggle.addEventListener('change', (e) => {
     const isEnabled = e.target.checked;
     chrome.storage.sync.set({ highContrastEnabled: isEnabled }, () => {
@@ -39,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Forum jump switch handler
   forumJumpToggle.addEventListener('change', (e) => {
     const isEnabled = e.target.checked;
     chrome.storage.sync.set({ forumJumpEnabled: isEnabled }, () => {
@@ -47,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Theme pill selection handler
   themePills.forEach((pill) => {
     pill.addEventListener('click', () => {
       const selectedTheme = pill.getAttribute('data-theme');

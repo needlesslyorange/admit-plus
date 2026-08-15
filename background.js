@@ -1,4 +1,3 @@
-// Background Service Worker for Admit+
 const DEFAULT_SETTINGS = {
   darkModeEnabled: true,
   currentTheme: 'midnight',
@@ -6,7 +5,6 @@ const DEFAULT_SETTINGS = {
   forumJumpEnabled: true
 };
 
-// Initialize settings
 chrome.runtime.onInstalled.addListener(async () => {
   const existing = await chrome.storage.sync.get(null);
   const toSet = {};
@@ -21,17 +19,15 @@ chrome.runtime.onInstalled.addListener(async () => {
     await chrome.storage.sync.set(toSet);
   }
 
-  // Minimal context menu
   chrome.contextMenus.removeAll(() => {
     chrome.contextMenus.create({
       id: 'admitplus_toggle_dark',
-      title: '🌙 Toggle Admit.org Dark Mode',
+      title: 'Toggle Dark Mode',
       contexts: ['all']
     });
   });
 });
 
-// Handle context menus
 chrome.contextMenus.onClicked.addListener(async (info) => {
   if (info.menuItemId === 'admitplus_toggle_dark') {
     const { darkModeEnabled = true } = await chrome.storage.sync.get('darkModeEnabled');
@@ -41,7 +37,6 @@ chrome.contextMenus.onClicked.addListener(async (info) => {
   }
 });
 
-// Handle keyboard command (Alt+Shift+D)
 chrome.commands.onCommand.addListener(async (command) => {
   if (command === 'toggle-dark-mode') {
     const { darkModeEnabled = true } = await chrome.storage.sync.get('darkModeEnabled');
@@ -51,7 +46,6 @@ chrome.commands.onCommand.addListener(async (command) => {
   }
 });
 
-// Notify open Admit.org tabs of changes
 async function notifyTabsOfStateChange(changes) {
   try {
     const tabs = await chrome.tabs.query({ url: ['*://admit.org/*', '*://*.admit.org/*'] });
@@ -61,6 +55,6 @@ async function notifyTabsOfStateChange(changes) {
       }
     }
   } catch (err) {
-    console.error('Error broadcasting state change:', err);
+    console.error(err);
   }
 }
