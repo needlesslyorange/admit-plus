@@ -1,8 +1,3 @@
-/**
- * Admit+ Build & Packaging Script
- * Generates ready-to-use unpacked directories and .zip archives for both Chrome and Firefox
- */
-
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
@@ -10,15 +5,11 @@ const { execSync } = require('child_process');
 const rootDir = __dirname;
 const firefoxDir = path.join(rootDir, 'firefox_build');
 
-console.log('🚀 Building Admit+ for Chrome & Firefox...');
-
-// 1. Prepare Firefox Build Directory
 if (fs.existsSync(firefoxDir)) {
   fs.rmSync(firefoxDir, { recursive: true, force: true });
 }
 fs.mkdirSync(firefoxDir, { recursive: true });
 
-// Copy assets and folders
 function copyRecursiveSync(src, dest) {
   const exists = fs.existsSync(src);
   const stats = exists && fs.statSync(src);
@@ -33,7 +24,6 @@ function copyRecursiveSync(src, dest) {
   }
 }
 
-// Copy shared extension code to firefox_build
 ['background.js', 'icons', 'content', 'popup'].forEach((item) => {
   const srcPath = path.join(rootDir, item);
   const destPath = path.join(firefoxDir, item);
@@ -42,31 +32,30 @@ function copyRecursiveSync(src, dest) {
   }
 });
 
-// Copy manifest.firefox.json as manifest.json inside firefox_build
 fs.copyFileSync(
   path.join(rootDir, 'manifest.firefox.json'),
   path.join(firefoxDir, 'manifest.json')
 );
 
-console.log('✅ Firefox build directory created at:', firefoxDir);
-
-// 2. Create ZIP Archives via PowerShell
+// Create POSIX-compliant forward-slash ZIP archives using tar
 try {
-  // Chrome Zip
-  execSync(
-    `powershell -Command "Compress-Archive -Path manifest.json, background.js, icons, content, popup -DestinationPath admit-plus-chrome.zip -Force; Copy-Item admit-plus-chrome.zip admit-plus-v1.2.0.zip -Force"`,
-    { cwd: rootDir, stdio: 'inherit' }
-  );
-  console.log('✅ Chrome package built: admit-plus-chrome.zip');
+  const chromeZip = path.join(rootDir, 'admit-plus-chrome.zip');
+  const firefoxZip = path.join(rootDir, 'admit-plus-firefox.zip');
 
-  // Firefox Zip
-  execSync(
-    `powershell -Command "Compress-Archive -Path manifest.json, background.js, icons, content, popup -DestinationPath ../admit-plus-firefox.zip -Force"`,
-    { cwd: firefoxDir, stdio: 'inherit' }
-  );
-  console.log('✅ Firefox package built: admit-plus-firefox.zip');
+  if (fs.existsSync(chromeZip)) fs.unlinkSync(chromeZip);
+  if (fs.existsSync(firefoxZip)) fs.unlinkSync(firefoxZip);
+
+  execSync('tar -a -c -f admit-plus-chrome.zip manifest.json background.js icons content popup', {
+    cwd: rootDir,
+    stdio: 'inherit'
+  });
+
+  execSync('tar -a -c -f ../admit-plus-firefox.zip manifest.json background.js icons content popup', {
+    cwd: firefoxDir,
+    stdio: 'inherit'
+  });
+
+  console.log('Build completed: admit-plus-chrome.zip and admit-plus-firefox.zip');
 } catch (err) {
   console.error('Error creating zip packages:', err);
 }
-
-console.log('🎉 All builds completed successfully!');
